@@ -1,4 +1,4 @@
-# Liferay Elm <img src="https://www-cdn.liferay.com/o/osb-www-theme/images/favicon.ico" width="24" height="24" alt="Liferay logo"/> <img src="https://elm-lang.org/favicon.ico" width="24" height="24" alt="Elm logo"/> 
+# Liferay Elm <img src="https://www-cdn.liferay.com/o/osb-www-theme/images/favicon.ico" width="28" height="28" alt="Liferay logo"/> <img src="https://elm-lang.org/favicon.ico" width="28" height="28" alt="Elm logo"/> 
 
 
 A Yeoman generator for creating Liferay Elm projects, using the amazing [Create Elm App](https://github.com/halfzebra/create-elm-app) for a fast and easy development with no build configuration. To create a build for Liferay, it uses the `liferay-npm-bundler` from the very useful [Liferay JS Toolkit](https://github.com/liferay/liferay-js-toolkit#readme).
@@ -19,7 +19,11 @@ Then generate your new project:
 
 ```bash
 yo liferay-elm
+# or if you want to accept all overwrites by default:
+yo liferay-elm --force
 ```
+> _Why the generator is having conflicted files?_
+> The first thing this generator is doing is calling `create-elm-app` to create the base structure, then it adds additional files to adapt the app for Liferay and so it needs to overwrite files like `.gitignore` to exclude `build.liferay` folder.
 
 ## Getting started
 
