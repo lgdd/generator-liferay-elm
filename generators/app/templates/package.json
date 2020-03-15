@@ -1,0 +1,38 @@
+{
+  "name": "<%= name %>",
+  "version": "<%= version %>",
+  "description": "<%= description %>",
+  "main": "index.js",
+  "directories": {
+    "src": "src",
+    "test": "tests"
+  },
+  "scripts": {
+    "elm": "./node_modules/.bin/elm-app",
+    "start": "yarn elm start",
+    "install": "yarn elm install",
+    "build": "yarn elm build",
+    "eject": "yarn elm eject",
+    "format": "./node_modules/.bin/elm-format src/ --yes",
+    "test": "yarn elm test",
+    "build:liferay": "yarn build && liferay-npm-bundler"
+  },
+  "license": "<%= license %>",
+  "devDependencies": {
+    "create-elm-app": "^4.2.1",
+    "elm-format": "^0.8.3",
+    "babel-preset-liferay-standard": "^2.18.2",
+    "liferay-npm-build-support": "^2.18.2",
+    "liferay-npm-bundler": "^2.18.2",
+    "liferay-npm-bundler-loader-babel-loader": "^2.18.2",
+    "liferay-npm-bundler-loader-copy-loader": "^2.18.2",
+    "liferay-npm-bundler-plugin-resolve-linked-dependencies": "^2.18.2"
+  },
+  "portlet": {
+    "com.liferay.portlet.display-category": "<%= portletcategory %>",
+    "javax.portlet.name": "<%= portletname %>",
+    "javax.portlet.security-role-ref": "power-user,user",
+    "javax.portlet.resource-bundle": "content.Language",
+    "com.liferay.portlet.instanceable": true
+  }
+}
