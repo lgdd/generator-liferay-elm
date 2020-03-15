@@ -36,7 +36,7 @@ module.exports = class extends Generator {
         type: "input",
         name: "version",
         message: "Version",
-        default: "0.1.0"
+        default: "1.0.0"
       },
       {
         type: "input",
@@ -99,13 +99,8 @@ module.exports = class extends Generator {
     );
 
     this.fs.copy(
-      this.templatePath("adapt-rt.js"),
-      this.destinationPath("src.liferay/adapt-rt.js")
-    );
-
-    this.fs.copy(
-      this.templatePath("index.js"),
-      this.destinationPath("src.liferay/index.js")
+      this.templatePath("liferay-elm-build.js"),
+      this.destinationPath("bin/liferay-elm-build.js")
     );
   }
 

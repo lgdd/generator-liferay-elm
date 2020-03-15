@@ -15,18 +15,20 @@
     "eject": "yarn elm-app eject",
     "format": "./node_modules/.bin/elm-format src/ --yes",
     "test": "yarn elm-app test",
-    "build:liferay": "yarn build && liferay-npm-bundler"
+    "build:liferay": "yarn build && node bin/liferay-elm-build.js"
   },
   "license": "<%= license %>",
   "devDependencies": {
     "create-elm-app": "^4.2.1",
+    "cross-spawn": "^7.0.1",
     "elm-format": "^0.8.3",
     "babel-preset-liferay-standard": "^2.18.2",
     "liferay-npm-build-support": "^2.18.2",
     "liferay-npm-bundler": "^2.18.2",
     "liferay-npm-bundler-loader-babel-loader": "^2.18.2",
     "liferay-npm-bundler-loader-copy-loader": "^2.18.2",
-    "liferay-npm-bundler-plugin-resolve-linked-dependencies": "^2.18.2"
+    "liferay-npm-bundler-plugin-resolve-linked-dependencies": "^2.18.2",
+    "rimraf": "^3.0.2"
   },
   "portlet": {
     "com.liferay.portlet.display-category": "<%= portletcategory %>",
