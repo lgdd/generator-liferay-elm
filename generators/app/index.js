@@ -54,6 +54,8 @@ module.exports = class extends Generator {
 
   writing() {
     const dest = this.props.name;
+
+    this.spawnCommandSync("npm", ["install", "-g", "create-elm-app"]);
     this.spawnCommandSync("create-elm-app", [path.resolve(dest)]);
 
     this.destinationRoot(path.resolve(dest));

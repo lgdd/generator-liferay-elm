@@ -8,13 +8,13 @@
     "test": "tests"
   },
   "scripts": {
-    "elm": "./node_modules/.bin/elm-app",
-    "start": "yarn elm start",
-    "install": "yarn elm install",
-    "build": "yarn elm build",
-    "eject": "yarn elm eject",
+    "elm-app": "./node_modules/.bin/elm-app",
+    "start": "yarn elm-app start",
+    "install": "yarn elm-app install",
+    "build": "yarn elm-app build",
+    "eject": "yarn elm-app eject",
     "format": "./node_modules/.bin/elm-format src/ --yes",
-    "test": "yarn elm test",
+    "test": "yarn elm-app test",
     "build:liferay": "yarn build && liferay-npm-bundler"
   },
   "license": "<%= license %>",

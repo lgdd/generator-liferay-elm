@@ -13,7 +13,6 @@
     "yeoman-generator"
   ],
   "devDependencies": {
-    "create-elm-app": "^4.2.1",
     "eslint": "^6.6.0",
     "eslint-config-prettier": "^6.6.0",
     "eslint-config-xo": "^0.27.2",
