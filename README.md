@@ -1,4 +1,4 @@
-# Liferay Elm <img src="https://www-cdn.liferay.com/o/osb-www-theme/images/favicon.ico" width="24" height="24"/> <img src="https://elm-lang.org/favicon.ico" width="24" height="24"/>
+# Liferay Elm <img src="https://www-cdn.liferay.com/o/osb-www-theme/images/favicon.ico" width="24" height="24" alt="Liferay logo"/> <img src="https://elm-lang.org/favicon.ico" width="24" height="24" alt="Elm logo"/> 
 
 
 A Yeoman generator for creating Liferay Elm projects, using the amazing [Create Elm App](https://github.com/halfzebra/create-elm-app) for a fast and easy development with no build configuration. To create a build for Liferay, it uses the `liferay-npm-bundler` from the very useful [Liferay JS Toolkit](https://github.com/liferay/liferay-js-toolkit#readme).
@@ -66,7 +66,7 @@ The best way to learn Elm is to follow the [official guide](https://guide.elm-la
 You can try Elm with this [online editor](https://elm-lang.org/try).
 
 You can also checkout this non-exhaustive list of nice talks about Elm:
-- [WHY ELM?](https://www.youtube.com/watch?v=rU-W6557Dos)
+- [Why Elm?](https://www.youtube.com/watch?v=rU-W6557Dos)
 - [Elm crash course - Building unbreakable webapps fast](https://www.youtube.com/watch?v=kEitFAY7Gc8)
 - [Developer Happiness on the Front End with Elm](https://www.youtube.com/watch?v=kuOCx0QeQ5c)
 - [Building UIs in the Dark](https://www.youtube.com/watch?v=sKxEwjKQ5zg)
