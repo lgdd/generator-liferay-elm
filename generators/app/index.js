@@ -9,7 +9,7 @@ module.exports = class extends Generator {
     // Have Yeoman greet the user.
     this.log(
       yosay(
-        `Welcome to the nice ${chalk.cyan("generator-liferay-elm")} generator!`
+        `Welcome to the happy ${chalk.cyan("generator-liferay-elm")} generator!`
       )
     );
 
@@ -42,7 +42,7 @@ module.exports = class extends Generator {
         type: "input",
         name: "license",
         message: "License",
-        default: "MIT"
+        default: "ISC"
       }
     ];
 
@@ -64,6 +64,11 @@ module.exports = class extends Generator {
     this.fs.write(
       this.destinationPath(".gitignore"),
       gitignore + "\nbuild.liferay"
+    );
+
+    this.fs.copy(
+      this.templatePath("liferay-elm-build.js"),
+      this.destinationPath("bin/liferay-elm-build.js")
     );
 
     this.fs.copyTpl(
@@ -96,11 +101,6 @@ module.exports = class extends Generator {
         portletname: this.props.name.replace(/-/g, ""),
         portletcategory: this.props.category
       }
-    );
-
-    this.fs.copy(
-      this.templatePath("liferay-elm-build.js"),
-      this.destinationPath("bin/liferay-elm-build.js")
     );
   }
 

@@ -2,10 +2,12 @@
   "name": "generator-liferay-elm",
   "version": "1.0.0",
   "description": "Yeoman generator for creating Liferay projects with Elm.",
+  "license": "LGPL-3.0",
+  "repository": "github:lgdd/generator-liferay-elm",
   "files": [
     "generators"
   ],
-  "main": "generators/index.js",
+  "main": "generators/app/index.js",
   "keywords": [
     "liferay",
     "elm",
@@ -69,7 +71,5 @@
   "scripts": {
     "pretest": "eslint .",
     "test": "jest"
-  },
-  "repository": "lgdd/generator-liferay-elm",
-  "license": "LGPL-3.0"
+  }
 }

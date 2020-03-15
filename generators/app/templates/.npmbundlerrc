@@ -6,7 +6,7 @@
 		"*": ["**/*"]
 	},
 
-	"sources": ["package.json", "build"],
+	"sources": ["package.json", "build", "src.liferay"],
 	"rules": [
 		{
 			"description": "Copy static assets",
@@ -18,6 +18,18 @@
 			"use": [
 				{
 					"loader": "copy-loader"
+				}
+			]
+		},
+		{
+			"description": "Transform Liferay's source files",
+			"test": "^src.liferay/.*\\.js$",
+			"use": [
+				{
+					"loader": "babel-loader",
+					"options": {
+						"presets": ["babel-preset-liferay-standard"]
+					}
 				}
 			]
 		},
