@@ -1,4 +1,4 @@
-# Liferay Elm <img src="https://www-cdn.liferay.com/o/osb-www-theme/images/favicon.ico" width="28" height="28" alt="Liferay logo"/> <img src="https://elm-lang.org/favicon.ico" width="28" height="28" alt="Elm logo"/> 
+# Liferay Elm Generator <img src="https://www-cdn.liferay.com/o/osb-www-theme/images/favicon.ico" width="28" height="28" alt="Liferay logo"/> <img src="https://elm-lang.org/favicon.ico" width="28" height="28" alt="Elm logo"/> 
 
 
 A Yeoman generator for creating Liferay Elm projects, using the amazing [Create Elm App](https://github.com/halfzebra/create-elm-app) for a fast and easy development with no build configuration. To create a build for Liferay, it uses the `liferay-npm-bundler` from the very useful [Liferay JS Toolkit](https://github.com/liferay/liferay-js-toolkit#readme).
