@@ -71,6 +71,6 @@
   },
   "scripts": {
     "pretest": "eslint .",
-    "test": "jest"
+    "test": "jest --runInBand"
   }
 }
