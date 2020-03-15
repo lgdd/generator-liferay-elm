@@ -18,7 +18,7 @@ module.exports = class extends Generator {
         type: "input",
         name: "name",
         message: "Your project name",
-        default: "my-elm-widget"
+        default: "my-elm-project"
       },
       {
         type: "input",
