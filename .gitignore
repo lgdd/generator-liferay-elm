@@ -2,3 +2,4 @@ node_modules
 coverage
 .idea
 *.iml
+__test__/tmp

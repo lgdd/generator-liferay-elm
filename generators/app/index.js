@@ -42,7 +42,7 @@ module.exports = class extends Generator {
         type: "input",
         name: "license",
         message: "License",
-        default: "ISC"
+        default: "MIT"
       }
     ];
 
