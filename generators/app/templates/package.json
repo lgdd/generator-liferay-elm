@@ -15,7 +15,8 @@
     "eject": "yarn elm-app eject",
     "format": "./node_modules/.bin/elm-format src/ --yes",
     "test": "yarn elm-app test",
-    "build:liferay": "yarn build && node bin/liferay-elm-build.js"
+    "build:liferay": "yarn build && node bin/liferay-elm-build.js",
+    "deploy:liferay": "yarn build:liferay && node bin/liferay-elm-deploy.js"
   },
   "license": "<%= license %>",
   "devDependencies": {

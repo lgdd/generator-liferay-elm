@@ -22,12 +22,6 @@ module.exports = class extends Generator {
       },
       {
         type: "input",
-        name: "category",
-        message: "Your project category (Liferay)",
-        default: "category.sample"
-      },
-      {
-        type: "input",
         name: "description",
         message: "Description",
         default: ""
@@ -43,6 +37,18 @@ module.exports = class extends Generator {
         name: "license",
         message: "License",
         default: "MIT"
+      },
+      {
+        type: "input",
+        name: "category",
+        message: "Liferay widget category",
+        default: "category.sample"
+      },
+      {
+        type: "input",
+        name: "deployFolder",
+        message: "Liferay deploy folder",
+        default: "/liferay/deploy"
       }
     ];
 
@@ -72,6 +78,11 @@ module.exports = class extends Generator {
       this.destinationPath("bin/liferay-elm-build.js")
     );
 
+    this.fs.copy(
+      this.templatePath("liferay-elm-deploy.js"),
+      this.destinationPath("bin/liferay-elm-deploy.js")
+    );
+
     this.fs.copyTpl(
       this.templatePath("Language.properties"),
       this.destinationPath("features/localization/Language.properties"),
@@ -81,9 +92,12 @@ module.exports = class extends Generator {
       }
     );
 
-    this.fs.copy(
+    this.fs.copyTpl(
       this.templatePath(".npmbuildrc"),
-      this.destinationPath(".npmbuildrc")
+      this.destinationPath(".npmbuildrc"),
+      {
+        deployFolder: this.props.deployFolder
+      }
     );
 
     this.fs.copy(
