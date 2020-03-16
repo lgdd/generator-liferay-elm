@@ -38,6 +38,12 @@ Build your app for Liferay:
 yarn build:liferay
 ```
 
+Deploy your app to Liferay:
+
+```bash
+yarn deploy:liferay
+```
+
 Run tests:
 ```bash
 yarn test
