@@ -12,13 +12,15 @@ describe("generator-liferay-elm:app", () => {
   const testDescription = "My beautiful Elm project for Liferay";
   const testLicense = "MIT";
   const testCategory = "category.elm";
+  const testDeployFolder = path.join(__dirname, "tmp/liferay/deploy");
   beforeAll(() => {
     const mockPrompts = {
       name: `${testProjectName}`,
-      category: `${testCategory}`,
       description: `${testDescription}`,
       version: `${testVersion}`,
-      license: `${testLicense}`
+      license: `${testLicense}`,
+      category: `${testCategory}`,
+      deployFolder: `${testDeployFolder}`
     };
     return helpers
       .run(path.join(__dirname, "../generators/app"))
@@ -67,8 +69,12 @@ describe("generator-liferay-elm:app", () => {
     );
   });
 
-  it("creates bin/liferay-elm.build.js", () => {
+  it("creates bin/liferay-elm-build.js", () => {
     assert.file([`${testProjectFolder}/bin/liferay-elm-build.js`]);
+  });
+
+  it("creates bin/liferay-elm-deploy.js", () => {
+    assert.file([`${testProjectFolder}/bin/liferay-elm-deploy.js`]);
   });
 
   // Test files content
@@ -99,6 +105,13 @@ describe("generator-liferay-elm:app", () => {
     assert.fileContent(
       `${testProjectFolder}/package.json`,
       `"javax.portlet.name": "${testProjectNameWithoutHyphens}"`
+    );
+  });
+
+  it("has deploy folder in .npmbuildrc", function() {
+    assert.fileContent(
+      `${testProjectFolder}/.npmbuildrc`,
+      `"deployDir": "${testDeployFolder}"`
     );
   });
 
