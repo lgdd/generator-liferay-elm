@@ -21,6 +21,8 @@ Then generate your new project:
 yo liferay-elm
 ```
 
+> You can also try it locally by cloning the repo and running `npm link` inside the project.
+
 ## Getting started
 
 Once the project generated:
