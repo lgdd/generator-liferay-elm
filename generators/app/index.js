@@ -55,15 +55,16 @@ module.exports = class extends Generator {
   writing() {
     const dest = this.props.name;
 
-    this.spawnCommandSync("npm", ["install", "-g", "create-elm-app"]);
-    this.spawnCommandSync("create-elm-app", [path.resolve(dest)]);
-
     this.destinationRoot(path.resolve(dest));
 
-    const gitignore = this.fs.read(this.destinationPath(".gitignore"));
-    this.fs.write(
-      this.destinationPath(".gitignore"),
-      gitignore + "\nbuild.liferay"
+    this.fs.copy(
+      this.templatePath("create-elm-app/**/*"),
+      this.destinationRoot()
+    );
+
+    this.fs.copy(
+      this.templatePath(".gitignore"),
+      this.destinationPath(".gitignore")
     );
 
     this.fs.copy(

@@ -25,7 +25,7 @@ describe("generator-liferay-elm:app", () => {
       .inDir(testParentFolder)
       .withArguments("--force")
       .withPrompts(mockPrompts);
-  }, 40000); // The spawn command for Create Elm App takes more than 20s
+  });
 
   afterAll(() => {
     rimraf.sync(testParentFolder);

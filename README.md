@@ -19,11 +19,7 @@ Then generate your new project:
 
 ```bash
 yo liferay-elm
-# or if you want to accept all overwrites by default:
-yo liferay-elm --force
 ```
-> _Why the generator is having conflicted files?_
-> The first thing this generator is doing is calling `create-elm-app` to create the base structure, then it adds additional files to adapt the app for Liferay and so it needs to overwrite files like `.gitignore` to exclude `build.liferay` folder.
 
 ## Getting started
 

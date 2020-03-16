@@ -91,7 +91,7 @@
 	],
 
 	"create-jar": {
-		"output-dir": "build/liferay",
+		"output-dir": "build.liferay",
 		"features": {
 			"js-extender": true
 		}
