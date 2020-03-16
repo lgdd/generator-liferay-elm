@@ -63,28 +63,41 @@ module.exports = class extends Generator {
 
     this.destinationRoot(path.resolve(dest));
 
-    this.fs.copy(
-      this.templatePath("create-elm-app/**/*"),
-      this.destinationRoot()
+    this.fs.copy(this.templatePath("base/**/*"), this.destinationRoot());
+
+    this.fs.copyTpl(
+      this.templatePath("extras/Main.elm"),
+      this.destinationPath("src/Main.elm"),
+      {
+        name: this.props.name
+      }
+    );
+
+    this.fs.copyTpl(
+      this.templatePath("extras/main.css"),
+      this.destinationPath("src/main.css"),
+      {
+        name: this.props.name
+      }
     );
 
     this.fs.copy(
-      this.templatePath(".gitignore"),
+      this.templatePath("extras/.gitignore"),
       this.destinationPath(".gitignore")
     );
 
     this.fs.copy(
-      this.templatePath("liferay-elm-build.js"),
+      this.templatePath("extras/liferay-elm-build.js"),
       this.destinationPath("bin/liferay-elm-build.js")
     );
 
     this.fs.copy(
-      this.templatePath("liferay-elm-deploy.js"),
+      this.templatePath("extras/liferay-elm-deploy.js"),
       this.destinationPath("bin/liferay-elm-deploy.js")
     );
 
     this.fs.copyTpl(
-      this.templatePath("Language.properties"),
+      this.templatePath("extras/Language.properties"),
       this.destinationPath("features/localization/Language.properties"),
       {
         name: this.props.name,
@@ -93,7 +106,7 @@ module.exports = class extends Generator {
     );
 
     this.fs.copyTpl(
-      this.templatePath(".npmbuildrc"),
+      this.templatePath("extras/.npmbuildrc"),
       this.destinationPath(".npmbuildrc"),
       {
         deployFolder: this.props.deployFolder
@@ -101,12 +114,12 @@ module.exports = class extends Generator {
     );
 
     this.fs.copy(
-      this.templatePath(".npmbundlerrc"),
+      this.templatePath("extras/.npmbundlerrc"),
       this.destinationPath(".npmbundlerrc")
     );
 
     this.fs.copyTpl(
-      this.templatePath("package.json"),
+      this.templatePath("extras/package.json"),
       this.destinationPath("package.json"),
       {
         name: this.props.name,

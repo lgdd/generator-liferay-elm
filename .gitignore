@@ -3,3 +3,4 @@ coverage
 .idea
 *.iml
 __test__/tmp
+elm-stuff

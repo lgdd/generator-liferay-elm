@@ -129,4 +129,18 @@ describe("generator-liferay-elm:app", () => {
       `document.getElementById('root')`
     );
   });
+
+  it("has project name in Main.elm", () => {
+    assert.fileContent(
+      `${testProjectFolder}/src/Main.elm`,
+      `${testProjectName}`
+    );
+  });
+
+  it("has project name class in main.css", () => {
+    assert.fileContent(
+      `${testProjectFolder}/src/main.css`,
+      `.${testProjectName}`
+    );
+  });
 });
