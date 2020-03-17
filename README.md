@@ -5,6 +5,7 @@ A Yeoman generator for creating Liferay Elm projects, using the amazing [Create 
 
 - [Installation](#installation)
 - [Getting started](#getting-started)
+- [Trying it locally](#trying-it-locally)
 - [What is Elm?](#what-is-elm)
 
 ## Installation
@@ -59,6 +60,17 @@ yarn run install elm/svg
 
 This generator gives you scripts that are aliases to the one provided by Create Elm App (e.g. `yarn start` for `elm-app start`).
 To learn more about the tasks available for your project, directly checkout this [guide](https://github.com/halfzebra/create-elm-app/blob/master/template/README.md).
+
+## Trying it locally
+
+If you to try this generator on your local machine, feel free to clone this repo and run the following commands:
+
+```bash
+# install dependencies:
+yarn
+# make it available for yeoman:
+npm link
+```
 
 ## What is Elm?
 
