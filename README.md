@@ -5,7 +5,7 @@ A Yeoman generator for creating Liferay Elm projects, using the amazing [Create 
 
 - [Installation](#installation)
 - [Getting started](#getting-started)
-- [Why Elm?](#why-elm)
+- [What is Elm?](#what-is-elm)
 
 ## Installation
 
