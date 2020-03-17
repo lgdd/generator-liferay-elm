@@ -13,6 +13,7 @@ describe("generator-liferay-elm:app", () => {
   const testLicense = "MIT";
   const testCategory = "category.elm";
   const testDeployFolder = path.join(__dirname, "tmp/liferay/deploy");
+
   beforeAll(() => {
     const mockPrompts = {
       name: `${testProjectName}`,
@@ -134,17 +135,29 @@ describe("generator-liferay-elm:app", () => {
     );
   });
 
-  it("has project name class in Main.elm", () => {
+  it("has project name as wrapper class in Main.elm", () => {
     assert.fileContent(
       `${testProjectFolder}/src/Main.elm`,
       `${testProjectName}`
     );
   });
 
-  it("has project name class in main.css", () => {
+  it("has classes prefixed with project name in main.css", () => {
     assert.fileContent(
       `${testProjectFolder}/src/main.css`,
-      `.${testProjectName}`
+      `.${testProjectName} {`
+    );
+    assert.fileContent(
+      `${testProjectFolder}/src/main.css`,
+      `.${testProjectName} p {`
+    );
+    assert.fileContent(
+      `${testProjectFolder}/src/main.css`,
+      `.${testProjectName} code {`
+    );
+    assert.fileContent(
+      `${testProjectFolder}/src/main.css`,
+      `.${testProjectName} img {`
     );
   });
 });

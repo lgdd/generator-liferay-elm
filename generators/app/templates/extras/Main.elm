@@ -1,7 +1,7 @@
 module Main exposing (..)
 
 import Browser
-import Html exposing (Html, text, div, h1, img)
+import Html exposing (Html, code, div, img, p, text)
 import Html.Attributes exposing (class, src)
 
 
@@ -38,7 +38,11 @@ view : Model -> Html Msg
 view model =
     div [ class "<%= name %>" ]
         [ img [ src "https://elm-lang.org/favicon.ico" ] []
-        , h1 [] [ text "Your Elm App is working!" ]
+        , p []
+            [ text "Edit "
+            , code [] [ text "src/Main.elm" ]
+            , text " and save to reload."
+            ]
         ]
 
 
