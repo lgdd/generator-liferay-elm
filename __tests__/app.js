@@ -47,6 +47,10 @@ describe("generator-liferay-elm:app", () => {
     assert.file(`${testProjectFolder}/src/index.js`);
   });
 
+  it("creates serviceWorker.js", () => {
+    assert.file(`${testProjectFolder}/src/serviceWorker.js`);
+  });
+
   it("creates .gitignore", () => {
     assert.file(`${testProjectFolder}/.gitignore`);
   });
@@ -130,7 +134,7 @@ describe("generator-liferay-elm:app", () => {
     );
   });
 
-  it("has project name in Main.elm", () => {
+  it("has project name class in Main.elm", () => {
     assert.fileContent(
       `${testProjectFolder}/src/Main.elm`,
       `${testProjectName}`
