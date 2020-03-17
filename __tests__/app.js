@@ -149,7 +149,11 @@ describe("generator-liferay-elm:app", () => {
     );
     assert.fileContent(
       `${testProjectFolder}/src/main.css`,
-      `.${testProjectName} p {`
+      `.${testProjectName} p,`
+    );
+    assert.fileContent(
+      `${testProjectFolder}/src/main.css`,
+      `.${testProjectName} a {`
     );
     assert.fileContent(
       `${testProjectFolder}/src/main.css`,

@@ -1,8 +1,9 @@
 module Main exposing (..)
 
 import Browser
-import Html exposing (Html, code, div, img, p, text)
-import Html.Attributes exposing (class, src)
+import Html exposing (Html, a, code, div, img, p, text)
+import Html.Attributes exposing (class, href, rel, src, target)
+
 
 
 ---- MODEL ----
@@ -43,6 +44,12 @@ view model =
             , code [] [ text "src/Main.elm" ]
             , text " and save to reload."
             ]
+        , a
+            [ href "https://guide.elm-lang.org/"
+            , target "_blank"
+            , rel "noopener noreferrer"
+            ]
+            [ text "Learn Elm" ]
         ]
 
 

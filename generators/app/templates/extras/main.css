@@ -16,7 +16,8 @@
   color: #293c4b;
 }
 
-.<%= name %> p {
+.<%= name %> p,
+.<%= name %> a {
   font-size: calc(10px + 2vmin);
 }
 
