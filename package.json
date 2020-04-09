@@ -4,6 +4,7 @@
   "description": "Yeoman generator for creating Liferay projects with Elm.",
   "author": "Louis-Guillaume Durand <louis-guillaume.durand@liferay.com>",
   "license": "LGPL-3.0",
+  "homepage": "https://github.com/lgdd/generator-liferay-elm#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lgdd/generator-liferay-elm"
