@@ -1,4 +1,7 @@
-# Liferay Elm Generator [![npm version](https://badge.fury.io/js/generator-liferay-elm.svg)](https://badge.fury.io/js/generator-liferay-elm) [![Build Status](https://travis-ci.org/lgdd/generator-liferay-elm.svg?branch=master)](https://travis-ci.org/lgdd/generator-liferay-elm)
+# Liferay Elm Generator
+[![npm version](https://badge.fury.io/js/generator-liferay-elm.svg)](https://badge.fury.io/js/generator-liferay-elm)
+[![Build Status](https://travis-ci.org/lgdd/generator-liferay-elm.svg?branch=master)](https://travis-ci.org/lgdd/generator-liferay-elm)
+[![Renovate enabled](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovatebot.com/)
 
 A Yeoman generator for creating Liferay Elm projects, using the amazing [Create Elm App](https://github.com/halfzebra/create-elm-app) for a fast and easy development with no build configuration. To create a build for Liferay, it uses the `liferay-npm-bundler` from the very useful [Liferay JS Toolkit](https://github.com/liferay/liferay-js-toolkit#readme).
 
