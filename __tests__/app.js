@@ -113,7 +113,7 @@ describe("generator-liferay-elm:app", () => {
     );
   });
 
-  it("has deploy folder in .npmbuildrc", function() {
+  it("has deploy folder in .npmbuildrc", () => {
     assert.fileContent(
       `${testProjectFolder}/.npmbuildrc`,
       `"deployDir": "${testDeployFolder}"`
