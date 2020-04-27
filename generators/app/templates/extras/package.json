@@ -20,7 +20,7 @@
   },
   "license": "<%= license %>",
   "devDependencies": {
-    "create-elm-app": "^4.2.7",
+    "create-elm-app": "^4.2.13",
     "cross-spawn": "^7.0.2",
     "elm-format": "^0.8.3",
     "babel-preset-liferay-standard": "^2.18.4",
