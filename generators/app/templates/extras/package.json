@@ -20,15 +20,15 @@
   },
   "license": "<%= license %>",
   "devDependencies": {
-    "create-elm-app": "^4.2.13",
-    "cross-spawn": "^7.0.2",
+    "create-elm-app": "^4.2.26",
+    "cross-spawn": "^7.0.3",
     "elm-format": "^0.8.3",
-    "babel-preset-liferay-standard": "^2.18.4",
-    "liferay-npm-build-support": "^2.18.4",
-    "liferay-npm-bundler": "^2.18.4",
-    "liferay-npm-bundler-loader-babel-loader": "^2.18.4",
-    "liferay-npm-bundler-loader-copy-loader": "^2.18.4",
-    "liferay-npm-bundler-plugin-resolve-linked-dependencies": "^2.18.4",
+    "babel-preset-liferay-standard": "^2.18.8",
+    "liferay-npm-build-support": "^2.18.8",
+    "liferay-npm-bundler": "^2.18.8",
+    "liferay-npm-bundler-loader-babel-loader": "^2.18.8",
+    "liferay-npm-bundler-loader-copy-loader": "^2.18.8",
+    "liferay-npm-bundler-plugin-resolve-linked-dependencies": "^2.18.8",
     "rimraf": "^3.0.2"
   },
   "portlet": {
