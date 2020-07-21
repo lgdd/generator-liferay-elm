@@ -82,7 +82,7 @@ module.exports = class extends Generator {
     );
 
     this.fs.copy(
-      this.templatePath("extras/.gitignore"),
+      this.templatePath("extras/_gitignore"),
       this.destinationPath(".gitignore")
     );
 
@@ -106,7 +106,7 @@ module.exports = class extends Generator {
     );
 
     this.fs.copyTpl(
-      this.templatePath("extras/.npmbuildrc"),
+      this.templatePath("extras/_npmbuildrc"),
       this.destinationPath(".npmbuildrc"),
       {
         deployFolder: this.props.deployFolder
@@ -114,7 +114,7 @@ module.exports = class extends Generator {
     );
 
     this.fs.copy(
-      this.templatePath("extras/.npmbundlerrc"),
+      this.templatePath("extras/_npmbundlerrc"),
       this.destinationPath(".npmbundlerrc")
     );
 
