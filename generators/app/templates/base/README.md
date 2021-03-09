@@ -1,6 +1,10 @@
-# Elm App
+# Liferay Elm App
 
-This project is bootstrapped with [Create Elm App](https://github.com/halfzebra/create-elm-app).
+This project was generated with [Liferay Elm](https://github.com/lgdd/generator-liferay-elm) and bootstrapped with [Create Elm App](https://github.com/halfzebra/create-elm-app).
+
+More information about `Liferay Elm` generator [here](https://github.com/lgdd/generator-liferay-elm#readme).
+
+# Create Elm App
 
 Below you will find some information on how to perform basic tasks.
 You can find the most recent version of this guide [here](https://github.com/halfzebra/create-elm-app/blob/master/template/README.md).
