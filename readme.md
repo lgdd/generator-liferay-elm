@@ -4,6 +4,7 @@ A Yeoman generator for creating Liferay Elm projects, using the amazing [Create 
 
 - [Installation](#installation)
 - [Getting started](#getting-started)
+- [Examples](#examples)
 - [Trying it locally](#trying-it-locally)
 - [What is Elm?](#what-is-elm)
 
@@ -72,6 +73,10 @@ yarn
 # make it available for yeoman:
 npm link
 ```
+
+## Examples
+
+If you want to see and try some examples, checkout this dedicated repository: https://github.com/lgdd/liferay-elm-examples.
 
 ## What is Elm?
 
