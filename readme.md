@@ -56,7 +56,7 @@ yarn test --watch
 
 Install a new [package](https://package.elm-lang.org/) (e.g. `elm/svg`):
 ```bash
-yarn run install elm/svg
+yarn run elm-install elm/svg
 ```
 
 This generator gives you scripts that are aliases to the one provided by Create Elm App (e.g. `yarn start` for `elm-app start`).
