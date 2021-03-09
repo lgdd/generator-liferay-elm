@@ -170,10 +170,16 @@ module.exports = class extends Generator {
     );
     console.log();
     console.log(chalk.cyan("  yarn format"));
-    console.log("    Format your sources with", chalk.italic("elm-format"));
+    console.log("    Format your sources with", chalk.italic("elm-format."));
     console.log();
     console.log(chalk.cyan("  yarn build:liferay"));
     console.log("    Bundles the app as a JAR for Liferay.");
+    console.log();
+    console.log(chalk.cyan("  yarn deploy:liferay"));
+    console.log(
+      "    Bundles the app as a JAR for Liferay and copy it to the deploy folder defined in",
+      chalk.italic(".npmbuildrc.")
+    );
     console.log();
     console.log("We suggest that you begin by typing:");
     console.log();
