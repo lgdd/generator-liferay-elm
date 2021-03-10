@@ -10,7 +10,7 @@ A Yeoman generator for creating Liferay Elm projects, using the amazing [Create 
 
 ## Installation
 
-__Node >=10__ is required for installation.
+__Node >=12__ is required for installation.
 
 First, install [Yeoman](http://yeoman.io) and generator-liferay-elm using [npm](https://www.npmjs.com/) (assuming you have pre-installed [node.js](https://nodejs.org/)).
 

@@ -132,10 +132,6 @@ module.exports = class extends Generator {
     );
   }
 
-  install() {
-    this.yarnInstall();
-  }
-
   end() {
     console.log();
     console.log(
