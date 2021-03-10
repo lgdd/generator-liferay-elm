@@ -34,6 +34,13 @@ Once the project generated:
 cd my-elm-project
 yarn start
 ```
+> Where `my-elm-project` is the default name provided by the generator.
+> Change it accordingly to the name you choose.
+
+If you choose the pre-configured Liferay Docker environment, you might want to start it with:
+```bash
+docker-compose up -d
+```
 
 Build your app for Liferay:
 
