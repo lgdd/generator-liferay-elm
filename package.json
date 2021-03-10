@@ -40,6 +40,9 @@
     "yeoman-generator": "^4.0.0",
     "yosay": "^2.0.1"
   },
+  "resolutions": {
+    "**/**/axios": "^0.21.1"
+  },
   "jest": {
     "testEnvironment": "node"
   },
