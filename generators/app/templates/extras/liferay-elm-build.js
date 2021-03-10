@@ -15,7 +15,7 @@ vendors();
 // Require our adapt runtime support module
 var _ADAPT_RT_ = require("./adapt-rt");
 
-// Invoke Angular main module passing Liferay's standard entry point arguments.
+// Invoke Elm main module passing Liferay's standard entry point arguments.
 module.exports = function(_LIFERAY_PARAMS_) {
   main(_LIFERAY_PARAMS_, _ADAPT_RT_);
 };`;
