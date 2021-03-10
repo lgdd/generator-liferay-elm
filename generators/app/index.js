@@ -17,38 +17,49 @@ module.exports = class extends Generator {
       {
         type: "input",
         name: "name",
-        message: "Your project name",
+        message: "What's your project name?",
         default: "my-elm-project"
       },
       {
         type: "input",
         name: "description",
-        message: "Description",
+        message: "How would you describe your project?",
         default: ""
       },
       {
         type: "input",
         name: "version",
-        message: "Version",
+        message: "Which version do you want to use as a starting point?",
         default: "1.0.0"
       },
       {
         type: "input",
         name: "license",
-        message: "License",
+        message: "Which license do you want to use for your project?",
         default: "MIT"
       },
       {
         type: "input",
         name: "category",
-        message: "Liferay widget category",
+        message:
+          "Which Liferay widget category should be associated with your project?",
         default: "category.sample"
       },
       {
+        type: "confirm",
+        name: "docker",
+        message:
+          "Do you want me to prepare a pre-configured Liferay Docker environment?"
+      },
+      {
+        when: answer => {
+          return !answer.docker;
+        },
         type: "input",
         name: "deployFolder",
-        message: "Liferay deploy folder",
-        default: "/liferay/deploy"
+        message:
+          "In this case, where is the Liferay deploy folder you want to use?",
+        default: "/opt/liferay/deploy"
       }
     ];
 
@@ -109,7 +120,9 @@ module.exports = class extends Generator {
       this.templatePath("extras/_npmbuildrc"),
       this.destinationPath(".npmbuildrc"),
       {
-        deployFolder: this.props.deployFolder
+        deployFolder: this.props.docker
+          ? "./docker/liferay/deploy"
+          : this.props.deployFolder
       }
     );
 
@@ -130,6 +143,34 @@ module.exports = class extends Generator {
         portletcategory: this.props.category
       }
     );
+
+    if (this.props.docker) {
+      this.fs.copy(
+        this.templatePath(
+          "extras/com.liferay.portal.remote.cors.configuration.PortalCORSConfiguration-default.config"
+        ),
+        this.destinationPath(
+          "docker/liferay/files/osgi/configs/com.liferay.portal.remote.cors.configuration.PortalCORSConfiguration-default.config"
+        )
+      );
+      this.fs.copy(
+        this.templatePath("extras/_gitkeep"),
+        this.destinationPath("docker/liferay/deploy/.gitkeep")
+      );
+      this.fs.copy(
+        this.templatePath("extras/Dockerfile"),
+        this.destinationPath("docker/liferay/Dockerfile")
+      );
+      this.fs.copy(
+        this.templatePath("extras/docker-compose.yml"),
+        this.destinationPath("docker-compose.yml")
+      );
+    }
+
+    this.fs.copy(
+      this.templatePath("extras/yarn.lock"),
+      this.destinationPath("yarn.lock")
+    );
   }
 
   install() {
@@ -140,17 +181,19 @@ module.exports = class extends Generator {
     console.log();
     console.log(
       chalk.green(
-        "Project is successfully created in `" + this.destinationRoot() + "`."
+        "✅ Project is successfully created in `" +
+          this.destinationRoot() +
+          "`."
       )
     );
     console.log();
     console.log(
-      "This project is bootstrapped with",
+      "📝 This project is bootstrapped with",
       chalk.bold("Create Elm App:"),
       chalk.underline("https://github.com/halfzebra/create-elm-app.")
     );
     console.log();
-    console.log("Inside that directory, you can run several commands:");
+    console.log("🔍 Inside that directory, you can run several commands:");
     console.log();
     console.log(chalk.cyan("  yarn start"));
     console.log("    Starts the development server.");
@@ -176,14 +219,40 @@ module.exports = class extends Generator {
     console.log("    Bundles the app as a JAR for Liferay.");
     console.log();
     console.log(chalk.cyan("  yarn deploy:liferay"));
-    console.log(
-      "    Bundles the app as a JAR for Liferay and copy it to the deploy folder defined in",
-      chalk.italic(".npmbuildrc.")
-    );
+    if (this.props.docker) {
+      console.log(
+        "    Bundles the app as a JAR for Liferay and copy it to",
+        chalk.italic("./docker/liferay/deploy")
+      );
+      console.log();
+      console.log(
+        "    ⚠️  " +
+          chalk.italic(
+            "If the deploy doesn't seem to work " +
+              "(i.e. you don't see any logs related to it on Liferay side),"
+          )
+      );
+      console.log(
+        chalk.italic(
+          "    you might need to remove the JAR under the deploy folder and " +
+            "re-run the deploy command."
+        )
+      );
+    } else {
+      console.log(
+        "    Bundles the app as a JAR for Liferay and copy it to the deploy folder defined in",
+        chalk.italic(".npmbuildrc.")
+      );
+    }
+
     console.log();
-    console.log("We suggest that you begin by typing:");
+    console.log("📌 I suggest that you begin by typing:");
     console.log();
     console.log(chalk.cyan("  cd"), this.props.name);
+    if (this.props.docker) {
+      console.log("  " + chalk.cyan("docker-compose up -d"));
+    }
+
     console.log("  " + chalk.cyan("yarn start"));
     console.log();
   }

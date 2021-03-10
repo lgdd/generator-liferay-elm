@@ -1,0 +1,13 @@
+version: "3"
+services:
+  liferay:
+    build:
+      dockerfile: docker/liferay/Dockerfile
+      context: .
+      args:
+        - LIFERAY_IMAGE=liferay/portal:7.3.5-ga6
+    ports:
+      - 8080:8080
+    volumes:
+      - ./docker/liferay/deploy:/mnt/liferay/deploy
+      - ./docker/liferay/files:/mnt/liferay/files

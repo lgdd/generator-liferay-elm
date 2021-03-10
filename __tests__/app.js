@@ -21,6 +21,7 @@ describe("generator-liferay-elm:app", () => {
       version: `${testVersion}`,
       license: `${testLicense}`,
       category: `${testCategory}`,
+      docker: false,
       deployFolder: `${testDeployFolder}`
     };
     return helpers
@@ -162,6 +163,22 @@ describe("generator-liferay-elm:app", () => {
     assert.fileContent(
       `${testProjectFolder}/src/main.css`,
       `.${testProjectName} img {`
+    );
+  });
+
+  // Test Docker-related files doesn't exist
+
+  it("creates Dockerfile", () => {
+    assert.noFile(`${testProjectFolder}/docker/liferay/Dockerfile`);
+  });
+
+  it("creates docker-compose.yml", () => {
+    assert.noFile(`${testProjectFolder}/docker-compose.yml`);
+  });
+
+  it("creates com.liferay.portal.remote.cors.configuration.PortalCORSConfiguration-default.config", () => {
+    assert.noFile(
+      `${testProjectFolder}/docker/liferay/files/osgi/configs/com.liferay.portal.remote.cors.configuration.PortalCORSConfiguration-default.config`
     );
   });
 });
