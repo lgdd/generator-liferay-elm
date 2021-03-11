@@ -27,6 +27,6 @@ fs.mkdirSync(srcLiferayDir);
 fs.writeFileSync(srcLiferayDir + '/adapt-rt.js', srcLiferayFileContent);
 fs.writeFileSync(srcLiferayDir + '/index.js', srcLiferayFileContent);
 
-spawn.sync('yarn', ['run', 'liferay-npm-bundler'], { stdio: 'inherit' });
+spawn.sync('npx', ['liferay-npm-bundler'], { stdio: 'inherit' });
 
 rimraf('src.liferay', function() {});

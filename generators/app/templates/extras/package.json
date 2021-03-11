@@ -8,19 +8,20 @@
     "test": "tests"
   },
   "scripts": {
-    "elm-app": "./node_modules/.bin/elm-app",
-    "elm-install": "yarn elm-app install",
-    "start": "yarn elm-app start",
-    "build": "yarn elm-app build",
-    "eject": "yarn elm-app eject",
-    "format": "./node_modules/.bin/elm-format src/ --yes",
-    "test": "yarn elm-app test",
-    "build:liferay": "yarn build && node bin/liferay-elm-build.js",
-    "deploy:liferay": "yarn build:liferay && node bin/liferay-elm-deploy.js"
+    "elm-app": "npx elm-app",
+    "elm-install": "npx elm-app install",
+    "start": "npx elm-app start",
+    "build": "npx elm-app build",
+    "eject": "npx elm-app eject",
+    "format": "npx elm-format src/ --yes",
+    "test": "npx elm-app test",
+    "build:liferay": "npx elm-app build && node bin/liferay-elm-build.js",
+    "deploy:liferay": "npx elm-app build && node bin/liferay-elm-build.js && node bin/liferay-elm-deploy.js"
   },
   "license": "<%= license %>",
   "devDependencies": {
     "create-elm-app": "^5.22.0",
+    "command-exists": "^1.2.9",
     "cross-spawn": "^7.0.3",
     "elm-format": "^0.8.5",
     "babel-preset-liferay-standard": "^2.23.0",
