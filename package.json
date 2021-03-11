@@ -45,7 +45,8 @@
     "**/**/axios": "^0.21.1"
   },
   "jest": {
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "testTimeout": 10000
   },
   "lint-staged": {
     "*.js": [
