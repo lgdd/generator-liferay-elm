@@ -4,6 +4,7 @@ const chalk = require("chalk");
 const yosay = require("yosay");
 const path = require("path");
 const commandExistsSync = require("command-exists").sync;
+const command = commandExistsSync("yarn") ? "yarn" : "npm";
 
 module.exports = class extends Generator {
   prompting() {
@@ -72,7 +73,6 @@ module.exports = class extends Generator {
 
   writing() {
     const dest = this.props.name;
-    const command = commandExistsSync("yarn") ? "yarn" : "npm";
 
     this.destinationRoot(path.resolve(dest));
 
@@ -193,7 +193,7 @@ module.exports = class extends Generator {
   }
 
   end() {
-    const command = commandExistsSync("yarn") ? "yarn" : "npm run";
+    const cmd = command === "yarn" ? "yarn" : "npm run";
     console.log();
     console.log(
       chalk.green(
@@ -211,16 +211,16 @@ module.exports = class extends Generator {
     console.log();
     console.log("🔍 Inside that directory, you can run several commands:");
     console.log();
-    console.log(chalk.cyan(`  ${command} start`));
+    console.log(chalk.cyan(`  ${cmd} start`));
     console.log("    Starts the development server.");
     console.log();
-    console.log(chalk.cyan(`  ${command} build`));
+    console.log(chalk.cyan(`  ${cmd} build`));
     console.log("    Bundles the app into static files for production.");
     console.log();
-    console.log(chalk.cyan(`  ${command} test`));
+    console.log(chalk.cyan(`  ${cmd} test`));
     console.log("    Starts the test runner.");
     console.log();
-    console.log(chalk.cyan(`  ${command} eject`));
+    console.log(chalk.cyan(`  ${cmd} eject`));
     console.log(
       "    Removes this tool and copies build dependencies, configuration files"
     );
@@ -228,13 +228,13 @@ module.exports = class extends Generator {
       "    and scripts into the app directory. If you do this, you can’t go back!"
     );
     console.log();
-    console.log(chalk.cyan(`  ${command} format`));
+    console.log(chalk.cyan(`  ${cmd} format`));
     console.log("    Format your sources with", chalk.italic("elm-format."));
     console.log();
-    console.log(chalk.cyan(`  ${command} build:liferay`));
+    console.log(chalk.cyan(`  ${cmd} build:liferay`));
     console.log("    Bundles the app as a JAR for Liferay.");
     console.log();
-    console.log(chalk.cyan(`  ${command} deploy:liferay`));
+    console.log(chalk.cyan(`  ${cmd} deploy:liferay`));
     if (this.props.docker) {
       console.log(
         "    Bundles the app as a JAR for Liferay and copy it to",
@@ -269,7 +269,7 @@ module.exports = class extends Generator {
       console.log("  " + chalk.cyan("docker-compose up -d"));
     }
 
-    console.log("  " + chalk.cyan(`${command} start`));
+    console.log("  " + chalk.cyan(`${cmd} start`));
     console.log();
   }
 };
