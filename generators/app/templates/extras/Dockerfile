@@ -1,6 +1,6 @@
 ARG LIFERAY_IMAGE=liferay/portal:7.3.5-ga6
 
-FROM node:12-alpine
+FROM node:18-alpine
 
 WORKDIR /usr/src/app
 COPY . .
